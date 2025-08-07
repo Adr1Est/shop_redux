@@ -1,12 +1,12 @@
 import './App.css'
-import MostrarLista from './components/MostrarLista'
+import RenderProducts from './components/RenderProducts.jsx'
 
 function App() {
 
   return (
     <>
-      <div className='bg-gray-800 min-h-dvh flex justify-center items-center'>
-        <MostrarLista/>
+      <div className='bg-gray-950 min-h-dvh flex justify-center items-center'>
+        <RenderProducts/>
       </div>
     </>
   )
