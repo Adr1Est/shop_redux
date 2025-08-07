@@ -2,7 +2,7 @@ function ProductCard({productName, productImg, productPrice, productCategory, pr
 
   return(
     <div className="flex flex-col gap-3 bg-gray-600 rounded-2xl w-80 h-90 p-3" title={productDesc}>
-      <div className="w-full h-50 rounded-2xl">
+      <div className="bg-gray-400 w-full h-50 rounded-2xl">
         <img src={productImg} alt={productName} className="object-contain rounded-2xl w-full h-full hover:scale-110 transition-transform duration-500"/>
       </div>
       <div className="flex flex-col gap-1">

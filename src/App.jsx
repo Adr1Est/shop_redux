@@ -1,11 +1,13 @@
 import './App.css'
 import RenderProducts from './components/RenderProducts.jsx'
+import NavBar from './components/NavBar.jsx'
 
 function App() {
 
   return (
     <>
-      <div className='bg-gray-950 min-h-dvh flex justify-center items-center'>
+      <div className='flex flex-col bg-gray-950 min-h-dvh justify-center items-center gap-1'>
+        <NavBar/>
         <RenderProducts/>
       </div>
     </>
