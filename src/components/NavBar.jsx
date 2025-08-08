@@ -6,6 +6,10 @@ import { grey, red } from '@mui/material/colors';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import CartProductCard from './CartProductCard';
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import { clearCartProducts } from '../features/cartProducts/cartSlice';
+import { clearAllProducts, fetchMockData } from '../features/allProducts/allProductsSlice';
 
 function NavBar(){
   const [cartListState, setCartListState] = useState(false)
@@ -24,9 +28,18 @@ function NavBar(){
     return setCartListState(true)
   }
 
+  const buttons = [
+    <Button key="one" onClick={() => dispatch(clearAllProducts())}>Clear product list</Button>,
+    <Button key="two" onClick={() => dispatch(clearCartProducts())}>Clear Cart</Button>,
+    <Button key="three" onClick={() => dispatch(fetchMockData())}>Fetch data</Button>,
+  ];
+
   return(
-    <div className="flex w-full justify-end items-center bg-gray-900 p-2">
-      <div className="self-end me-2 relative">
+    <div className="flex w-full justify-between items-center bg-gray-900 p-2">
+      <ButtonGroup size="large" aria-label="Large button group">
+        {buttons}
+      </ButtonGroup>
+      <div className="me-2 relative">
         <IconButton sx={{color: grey[300]}} onClick={toggleListState}>
           <ShoppingCartIcon fontSize="small" />
           <CartBadge badgeContent={cartList.length} sx={{color: red[300]}} overlap="circular" />
@@ -37,8 +50,9 @@ function NavBar(){
               <div className='flex flex-col gap-1 overflow-y-auto'>
                 {cartList.length > 0
                   ? 
-                    cartList.map(product => (
+                    cartList.map((product, index) => (
                       <CartProductCard
+                        key={index}
                         name={product.name}
                         image={product.image}
                         price={product.price}
