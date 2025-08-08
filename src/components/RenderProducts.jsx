@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from "react-redux"
 import { fetchMockData } from "../features/allProducts/allProductsSlice"
 import { useEffect, useState } from "react"
 import ProductCard from "./ProductCard"
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
 
 function RenderProducts(){
   const [containerClass, setContainerClass] = useState("flex flex-row flex-wrap gap-3 justify-center items-center h-200 w-full bg-gray-900 text-gray-50 p-3 overflow-y-auto")
@@ -19,14 +21,9 @@ function RenderProducts(){
   if(mockData.length === 0){
     return (
       <div className={containerClass}>
-        <ProductCard 
-          productName={"Loading..."}
-          productImg={"https://signfix.com.au/wp-content/uploads/2017/09/placeholder-600x400.png"}
-          productPrice={"..."}
-          productCategory={"Loading..."}
-          productDesc={"Loading..."}
-          productRating={{ rate: 0, count: 0 }}
-        />
+        <Box sx={{ width: '50%' }}>
+          <LinearProgress />
+        </Box>
       </div>
     )
   }
