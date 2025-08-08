@@ -1,10 +1,25 @@
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import StarIcon from '@mui/icons-material/Star';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import ThumbsUpDownIcon from '@mui/icons-material/ThumbsUpDown';
+import { addCart } from '../features/cartProducts/cartSlice';
+import { useDispatch } from 'react-redux';
 
 function ProductCard({productName, productImg, productPrice, productCategory, productDesc, productRating}){
+  const dispatch = useDispatch()
+  const product = {
+    name: productName,
+    image: productImg,
+    price: productPrice,
+    category: productCategory,
+    description: productDesc,
+    rating: productRating
+  }
+
+  const handleAddCartItem = () => {
+    dispatch(addCart(product))
+    return
+  }
 
   return(
     <div className="flex flex-col gap-3 bg-gray-600 rounded-xl w-80 h-90  relative" title={productDesc}>
@@ -29,8 +44,8 @@ function ProductCard({productName, productImg, productPrice, productCategory, pr
               <p>{productRating.count}</p>
             </div>
           </div>
-          <button className="flex items-center text-xl cursor-pointer hover:scale-130 transition-transform duration-100 ms-4">
-            <FavoriteBorderIcon/>
+          <button className="flex items-center text-xl cursor-pointer hover:scale-130 transition-transform duration-100 ms-4" onClick={handleAddCartItem}>
+            <ShoppingCartIcon/>
           </button>
         </div>
       </div>
