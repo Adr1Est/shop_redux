@@ -1,14 +1,24 @@
+import { styled } from '@mui/material/styles';
+import IconButton from '@mui/material/IconButton';
+import Badge, { badgeClasses } from '@mui/material/Badge';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { grey, red } from '@mui/material/colors';
+
 function NavBar(){
+  const CartBadge = styled(Badge)`
+    & .${badgeClasses.badge} {
+      top: -12px;
+      right: -6px;
+    }
+  `;
 
   return(
-    <div className="flex w-full justify-end items-center bg-gray-900 rounded-2xl p-2">
+    <div className="flex w-full justify-end items-center bg-gray-900 p-2">
       <div className="self-end me-2 relative">
-        <button className="bg-gray-600 text-gray-50 hover:bg-gray-700 hover:scale-110 rounded-2xl p-3 transition-transform duration-150 cursor-pointer">
-          Cart
-        </button>
-        <div className="flex justify-center items-center rounded-full w-6 h-6 bg-red-500 absolute -top-2 -right-2">
-          <p className="text-red-950">0</p>
-        </div>
+        <IconButton sx={{color: grey[300]}}>
+          <ShoppingCartIcon fontSize="small" />
+          <CartBadge badgeContent={2} sx={{color: red[300]}} overlap="circular" />
+        </IconButton>
       </div>
     </div>
   )
