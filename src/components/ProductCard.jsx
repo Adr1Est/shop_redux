@@ -22,8 +22,8 @@ function ProductCard({productName, productImg, productPrice, productCategory, pr
   }
 
   return(
-    <div className="flex flex-col gap-3 bg-gray-600 rounded-xl w-80 h-90  relative" title={productDesc}>
-      <div className="bg-gray-400 w-full h-50 rounded-t-xl">
+    <div className="flex flex-col gap-3 bg-stone-400 rounded-xl w-80 h-90  relative" title={productDesc}>
+      <div className="bg-orange-200 w-full h-50 rounded-t-xl">
         <img src={productImg} alt={productName} className="object-contain rounded-2xl w-full h-full hover:scale-110 transition-transform duration-500"/>
       </div>
       <div className="flex flex-col gap-1">

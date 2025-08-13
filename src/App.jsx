@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <div className='flex flex-col bg-gray-950 min-h-dvh gap-5'>
+      <div className='flex flex-col bg-stone-300 text-stone-300 min-h-dvh gap-5'>
         <NavBar/>
         <RenderProducts/>
       </div>

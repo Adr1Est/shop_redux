@@ -6,8 +6,8 @@ function CartProductCard({name, image, price}){
   const dispatch = useDispatch()
 
   return(
-    <div className="flex flex-row gap-1 w-full h-15 bg-gray-500 items-center justify-between relative">
-      <div className="w-20 h-full bg-gray-200">
+    <div className="flex flex-row gap-1 w-full h-15 bg-stone-500 items-center justify-between relative">
+      <div className="w-20 h-full bg-orange-200">
         <img src={image} className="object-contain w-full h-full" alt={name} />
       </div>
       <p className="text-xs">{name}</p>

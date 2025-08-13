@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 
 function RenderProducts(){
-  const [containerClass, setContainerClass] = useState("flex flex-row flex-wrap gap-3 justify-center items-center h-200 w-full bg-gray-900 text-gray-50 p-3 overflow-y-auto")
+  const [containerClass, setContainerClass] = useState("flex flex-row flex-wrap gap-3 justify-center items-center h-200 w-full text-gray-50 p-3 overflow-y-auto")
   const dispatch = useDispatch()
   const status = useSelector(state => state.allProducts.status)
   const mockData = useSelector(state => state.allProducts.allProducts)

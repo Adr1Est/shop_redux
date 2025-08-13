@@ -35,7 +35,7 @@ function NavBar(){
   ];
 
   return(
-    <div className="flex w-full justify-between items-center bg-gray-900 p-2">
+    <div className="flex w-full justify-between items-center bg-stone-600 p-2">
       <ButtonGroup size="large" aria-label="Large button group">
         {buttons}
       </ButtonGroup>
@@ -46,7 +46,7 @@ function NavBar(){
         </IconButton>
         {cartListState
           ? (
-            <div className='flex flex-col bg-gray-700 text-gray-50 absolute min-w-80 max-h-100 right-0 z-10 p-2'>
+            <div className='flex flex-col bg-gray-700 absolute min-w-80 max-h-100 right-0 z-10 p-2'>
               <div className='flex flex-col gap-1 overflow-y-auto'>
                 {cartList.length > 0
                   ? 
